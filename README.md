@@ -104,146 +104,44 @@ controlDuration             | number   | No       | 3                 | Set the 
 
 Avoid adding alignItems: 'center' to the container, it can cause fullscreen mode to disappear :D
 
-## React Navigation
-
-If you’re using react-navigation you need to manually hide the headers / tab bars to take advantage of fullscreen videos.
-
 ## Example
 
 ```jsx
-import React, { Component } from 'react'
-import { StyleSheet, View, ScrollView, Alert, Text } from 'react-native'
+import React, { useState } from 'react'
 
-import Video from 'react-native-af-video-player'
+function VideoScreen({ route, navigation }) {  
+  const [fullscreen, setFullscreen] = React.useState(false)
+  React.useEffect(() => {
+    navigation.setOptions({ headerShown: !fullscreen })
+  }, [fullscreen, navigation])
+  
+  const logo = 'logo.png'
+  const image = 'image.png'
+  const source = '1.mp4'   
+
+  return (
+     <View style={styles.container}>
+        <Video
+            url={source}
+            autoPlay
+            logo={logo}
+            placeholder={image}
+            hideFullScreenControl={false}
+            onFullScreen={status => onFullScreen(status)}
+            rotateToFullScreen
+        />
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-  }
+    backgroundColor: '#fff',
+    flex: 1,
+  },
 })
 
-class ReactNavigationExample extends Component {
-
-  static navigationOptions = ({ navigation }) => {
-    const { state } = navigation
-    // Setup the header and tabBarVisible status
-    const header = state.params && (state.params.fullscreen ? undefined : null)
-    const tabBarVisible = state.params ? state.params.fullscreen : true
-    return {
-      // For stack navigators, you can hide the header bar like so
-      header,
-      // For the tab navigators, you can hide the tab bar like so
-      tabBarVisible,
-    }
-  }
-
-  onFullScreen(status) {
-    // Set the params to pass in fullscreen status to navigationOptions
-    this.props.navigation.setParams({
-      fullscreen: !status
-    })
-  }
-
-  onMorePress() {
-    Alert.alert(
-      'Boom',
-      'This is an action call!',
-      [{ text: 'Aw yeah!' }]
-    )
-  }
-
-  render() {
-
-    const url = 'https://your-url.com/video.mp4'
-    const logo = 'https://your-url.com/logo.png'
-    const placeholder = 'https://your-url.com/placeholder.png'
-    const title = 'My video title'
-
-    return (
-      <View style={styles.container}>
-        <Video
-          autoPlay
-          url={url}
-          title={title}
-          logo={logo}
-          placeholder={placeholder}
-          onMorePress={() => this.onMorePress()}
-          onFullScreen={status => this.onFullScreen(status)}
-          fullScreenOnly
-        />
-        <ScrollView>
-          <Text>Some content here...</Text>
-        </ScrollView>
-      </View>
-    )
-  }
-}
-
-export default ReactNavigationExample
-
-```
-
-## http vs https
-
-For your sanity you should use https especially if you’re planning to use this for iOS. Using http will not work due to App Transport Security Settings will result in AppStore rejection.
-
-## Fullscreen videos inside a ScrollView
-
-If you need the video inside a ScrollView, use our ScrollView instead:
-The reason for this is because we need to hide all of it's content due to ScrollView styling challenges when enabling fullscreen mode. We wouldn't want you deal with that headache, instead let this component handle it :)
-You can also apply styles to the video by wrapping our Container around it. Note: wrapping the video with your own element can cause fullscreen defects.
-Also having multiple videos in a ScrollView isn't perfect, so use at your own risk.
-
-## Example
-
-```jsx
-
-  import Video, { ScrollView, Container } from 'react-native-af-video-player'
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1
-    },
-    videoContainer: {
-      margin: 10
-    }
-  })
-
-  class VideoInScrollView extends React.Component {
-
-    render() {
-      return (
-        <ScrollView style={styles.container}>
-
-          <Text>Some content above</Text>
-
-          <Container style={styles.videoContainer}>
-            <Video
-              autoPlay
-              url={url}
-              title={title}
-              logo={logo}
-              placeholder={logo}
-              rotateToFullScreen
-            />
-          </Container>
-
-          {/* Or use without the Container */}
-          <Video
-            autoPlay
-            url={url}
-            title={title}
-            logo={logo}
-            placeholder={logo}
-            rotateToFullScreen
-          />
-
-          <Text>Some content below</Text>
-
-        </ScrollView>
-      )
-    }
-  }
+export default VideoScreen
 ```
 
 # To Do
