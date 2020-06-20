@@ -81,21 +81,21 @@ class Controls extends Component {
     this.setState({ hideControls: false }, () => {
       this.progressbar.setValue(2)
       Animated.parallel([
-        Animated.timing(this.animControls, { toValue: 1, duration: 200 }),
-        Animated.timing(this.scale, { toValue: 1, duration: 200 })
+        Animated.timing(this.animControls, { toValue: 1, duration: 200, useNativeDriver: false }),
+        Animated.timing(this.scale, { toValue: 1, duration: 200, useNativeDriver: false })
       ]).start()
     })
   }
 
   hideControls() {
     Animated.parallel([
-      Animated.timing(this.animControls, { toValue: 0, duration: 200 }),
-      Animated.timing(this.scale, { toValue: 0.25, duration: 200 })
+      Animated.timing(this.animControls, { toValue: 0, duration: 200, useNativeDriver: false }),
+      Animated.timing(this.scale, { toValue: 0.25, duration: 200, useNativeDriver: false })
     ]).start(() => this.setState({ hideControls: true, seconds: 0 }))
   }
 
   hiddenControls() {
-    Animated.timing(this.progressbar, { toValue: 0, duration: 200 }).start()
+    Animated.timing(this.progressbar, { toValue: 0, duration: 200, useNativeDriver: false }).start()
     return (
       <Touchable style={styles.container} onPress={() => this.showControls()}>
         <Animated.View style={[styles.container, { paddingBottom: this.progressbar }]}>

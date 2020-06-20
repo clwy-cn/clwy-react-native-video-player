@@ -34,27 +34,31 @@ class Loading extends Component {
         Animated.timing(this.anim.width, {
           toValue: 75,
           easing: Easing.back(1),
-          duration: 750
+          duration: 750,
+          useNativeDriver: false
         }),
         Animated.timing(this.anim.width, {
           toValue: 10,
           // easing: Easing.back(2),
-          duration: 250
+          duration: 250,
+          useNativeDriver: false
         }),
         Animated.timing(this.anim.width, {
           toValue: 75,
           easing: Easing.back(1),
-          duration: 750
+          duration: 750,
+          useNativeDriver: false
         }),
         Animated.timing(this.anim.width, {
           toValue: 10,
           // easing: Easing.back(2),
-          duration: 250
+          duration: 250,
+          useNativeDriver: false
         })
       ]),
       Animated.sequence([
-        Animated.timing(this.anim.translateX, { toValue: 50, easing: Easing.back(1), duration: 1000 }),
-        Animated.timing(this.anim.translateX, { toValue: -50, easing: Easing.back(1), duration: 1000 })
+        Animated.timing(this.anim.translateX, { toValue: 50, easing: Easing.back(1), duration: 1000, useNativeDriver: false }),
+        Animated.timing(this.anim.translateX, { toValue: -50, easing: Easing.back(1), duration: 1000, useNativeDriver: false })
       ])
     ])).start()
   }

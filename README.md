@@ -1,10 +1,21 @@
-# react-native-~~af~~rb-video-player
+# react-native-clwy-video-player
 
-A customisable, updated, React Native video player for Android and IOS, based on [abbasfreestyle react-native-af-video-player](https://github.com/abbasfreestyle/react-native-af-video-player).
+A customisable, updated, React Native video player for Android and IOS, based on [abbasfreestyle react-native-af-video-player](https://github.com/abbasfreestyle/react-native-af-video-player) and 
+[rbcorrea/react-native-rb-video-player](https://github.com/rbcorrea/react-native-rb-video-player).
 
-This is a result of not merged pull requests and some modifications planned to be used with React Native 0.58+ version.
+This is a result of not merged pull requests and some modifications planned to be used with React Native 0.6+ version.
 
 ![Demo](./demo.gif)
+
+## What did I do?
+- Android 
+
+It only works on Android at the moment. I resolved all warning and FullScreenControl disappear errors.
+
+- iOS
+
+Because there is something wrong in  [expo-keep-awake](https://docs.expo.io/versions/latest/sdk/keep-awake/), it can't work under iOS at present.
+In iOS，please use [react-native-video](https://github.com/react-native-community/react-native-video) directly.
 
 ## Features
 
@@ -17,17 +28,7 @@ This is a result of not merged pull requests and some modifications planned to b
 ## Install
 
 ```shell
-npm i -S react-native-rb-video-player
-```
-
-Then link
-
-```shell
-react-native link react-native-video
-react-native link react-native-keep-awake
-react-native link react-native-vector-icons
-react-native link react-native-orientation
-react-native link react-native-linear-gradient
+yarn add react-native-rb-video-player
 ```
 
 ## Simple Usage
@@ -96,52 +97,6 @@ error                 | boolean, object | No | true                     | Pass i
 theme                 | object   | No       | all white                 | Pass in an object to theme. (See example below to see the full list of available settings)
 controlDuration             | number   | No       | 3                 | Set the visibility time of the pause button and the progress bar after the video was started
 
-## Referencing
-
-To toggle play/pause manually, you can do it like so:
-
-```jsx
-
-  const theme = {
-    title: '#FFF',
-    more: '#446984',
-    center: '#7B8F99',
-    fullscreen: '#446984',
-    volume: '#A5957B',
-    scrubberThumb: '#234458',
-    scrubberBar: '#DBD5C7',
-    seconds: '#DBD5C7',
-    duration: '#DBD5C7',
-    progress: '#446984',
-    loading: '#DBD5C7'
-  }
-
-  class MyComponent extends Component {
-
-    play() {
-      this.video.play()
-      this.video.seekTo(25)
-    }
-
-    pause() {
-      this.video.pause()
-    }
-
-    render() {
-      return (
-        <View>
-          <Video
-            url={url}
-            ref={(ref) => { this.video = ref }}
-            theme={theme}
-          />
-          <Button onPress={() => this.play()}>Play</Button>
-          <Button onPress={() => this.pause()}>Pause</Button>
-        </View>
-      )
-    }
-  }
-```
 
 # Issues
 
@@ -297,7 +252,7 @@ Also having multiple videos in a ScrollView isn't perfect, so use at your own ri
 - [ ] Support Immersive mode for Android
 - [ ] improve multiple videos fullscreen support within a ScrollView
 - [ ] investigate subtitle support
-- [x] Improve scrubber controls for iOS
+- [x] Support for iOS
 - [x] Provide fullscreen support within a ScrollView
 - [x] Customise specific components for better theming
 

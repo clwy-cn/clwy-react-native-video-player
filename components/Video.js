@@ -101,7 +101,7 @@ class Video extends Component {
       inlineHeight,
       duration: data.duration
     }, () => {
-      Animated.timing(this.animInline, { toValue: inlineHeight, duration: 200 }).start()
+      Animated.timing(this.animInline, { toValue: inlineHeight, duration: 200, useNativeDriver: false }).start()
       this.props.onPlay(!this.state.paused)
       if (!this.state.paused) {
         KeepAwake.activate()
@@ -262,16 +262,16 @@ class Video extends Component {
 
   animToFullscreen(height) {
     Animated.parallel([
-      Animated.timing(this.animFullscreen, { toValue: height, duration: 200 }),
-      Animated.timing(this.animInline, { toValue: height, duration: 200 })
+      Animated.timing(this.animFullscreen, { toValue: height, duration: 200, useNativeDriver: false }),
+      Animated.timing(this.animInline, { toValue: height, duration: 200, useNativeDriver: false })
     ]).start()
   }
 
   animToInline(height) {
     const newHeight = height || this.state.inlineHeight
     Animated.parallel([
-      Animated.timing(this.animFullscreen, { toValue: newHeight, duration: 100 }),
-      Animated.timing(this.animInline, { toValue: this.state.inlineHeight, duration: 100 })
+      Animated.timing(this.animFullscreen, { toValue: newHeight, duration: 100, useNativeDriver: false }),
+      Animated.timing(this.animInline, { toValue: this.state.inlineHeight, duration: 100, useNativeDriver: false })
     ]).start()
   }
 
