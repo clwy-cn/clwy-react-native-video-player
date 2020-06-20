@@ -10,12 +10,11 @@ This is a result of not merged pull requests and some modifications planned to b
 ## What did I do?
 - Android 
 
-It only works on Android at the moment. I resolved all warning and FullScreenControl disappear errors.
+It works good on Android. I resolved all warning and FullScreenControl disappear errors.
 
 - iOS
 
-Because there is something wrong in  [expo-keep-awake](https://docs.expo.io/versions/latest/sdk/keep-awake/), it can't work under iOS at present.
-In iOS，please use [react-native-video](https://github.com/react-native-community/react-native-video) directly.
+In iOS，I recommend you to use [react-native-video](https://github.com/react-native-community/react-native-video) instead.
 
 ## Features
 
@@ -28,7 +27,8 @@ In iOS，please use [react-native-video](https://github.com/react-native-communi
 ## Install
 
 ```shell
-yarn add react-native-rb-video-player
+yarn add react-native-clwy-video-player react-native-orientation @sayem314/react-native-keep-awake
+npx pod-install
 ```
 
 ## Simple Usage
@@ -36,7 +36,7 @@ yarn add react-native-rb-video-player
 ```jsx
 import React from 'react'
 import { AppRegistry, StyleSheet, View } from 'react-native'
-import Video from 'react-native-rb-video-player'
+import Video from 'react-native-clwy-video-player'
 
 const styles = StyleSheet.create({
   container: {
