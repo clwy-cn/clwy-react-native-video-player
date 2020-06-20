@@ -31,36 +31,6 @@ yarn add react-native-clwy-video-player react-native-orientation @sayem314/react
 npx pod-install
 ```
 
-## Simple Usage
-
-```jsx
-import React from 'react'
-import { AppRegistry, StyleSheet, View } from 'react-native'
-import Video from 'react-native-clwy-video-player'
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center'
-  }
-})
-
-const url = 'https://your-url.com/video.mp4'
-
-class VideoExample extends React.Component {
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Video url={url} />
-      </View>
-    )
-  }
-}
-
-AppRegistry.registerComponent('VideoExample', () => VideoExample)
-```
-
 ## Props
 
 Prop                  | Type     | Required | Default                   | Description
@@ -100,14 +70,14 @@ controlDuration             | number   | No       | 3                 | Set the 
 
 # Issues
 
-## Container
-
 Avoid adding alignItems: 'center' to the container, it can cause fullscreen mode to disappear :D
 
 ## Example
 
 ```jsx
 import React, { useState } from 'react'
+import { StyleSheet, View } from 'react-native'
+import Video from 'react-native-clwy-video-player'
 
 function VideoScreen({ route, navigation }) {  
   const [fullscreen, setFullscreen] = React.useState(false)
@@ -138,6 +108,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     flex: 1,
+    justifyContent: 'center',
   },
 })
 
