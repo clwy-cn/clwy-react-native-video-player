@@ -12,7 +12,7 @@ import {
 } from 'react-native'
 import VideoPlayer from 'react-native-video'
 import {activateKeepAwake, deactivateKeepAwake} from "@sayem314/react-native-keep-awake"
-import Orientation from 'react-native-orientation'
+import Orientation from 'react-native-orientation-locker';
 import Icons from 'react-native-vector-icons/MaterialIcons'
 import {Controls} from './'
 import {checkSource} from './utils'
