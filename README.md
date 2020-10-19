@@ -89,6 +89,10 @@ function VideoScreen({ route, navigation }) {
   const image = 'image.png'
   const source = '1.mp4'   
 
+  const onFullScreen = (status) => {
+    setFullscreen(status);
+  };
+
   return (
      <View style={styles.container}>
         <Video
