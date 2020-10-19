@@ -27,7 +27,7 @@ In iOS，I recommend you to use [react-native-video](https://github.com/react-na
 ## Install
 
 ```shell
-yarn add react-native-clwy-video-player react-native-orientation-locker @sayem314/react-native-keep-awake
+yarn add react-native-orientation-locker @sayem314/react-native-keep-awake react-native-vector-icons react-native-clwy-video-player
 npx pod-install
 ```
 
