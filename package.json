@@ -1,20 +1,22 @@
 {
   "name": "clwy-react-native-video-player",
-  "version": "1.1.4",
+  "version": "1.1.9",
   "dependencies": {
+    "@sayem314/react-native-keep-awake": "^1.1.0",
     "react-native-linear-gradient": "^2.6.2",
-    "clwy-react-native-slider": "^0.12.2"
+    "react-native-orientation-locker": "^1.5.0",
+    "react-native-vector-icons": "*"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-jest": "21.2.0",
+    "babel-jest": "28.1.3",
     "babel-preset-flow": "^6.23.0",
-    "babel-preset-react-native": "4.0.0",
-    "jest": "21.2.1",
-    "react-test-renderer": "16.8.3"
+    "babel-preset-react-native": "4.0.1",
+    "jest": "28.1.3",
+    "react-test-renderer": "18.2.0"
   },
   "description": "An updated, customisable React Native video player for Android and IOS based on AF-video-player from abbasfreestyle",
-  "homepage": "https://github.com/clwy-cn/react-native-clwy-video-player#readme",
+  "homepage": "https://github.com/clwy-cn/clwy-react-native-video-player",
   "keywords": [
     "react-component",
     "react-native",
@@ -26,7 +28,7 @@
   ],
   "maintainers": [
     {
-      "name": "canonpd",
+      "name": "Liu Dong",
       "email": "canonpd@gmail.com"
     }
   ],
@@ -37,6 +39,7 @@
     "url": "https://github.com/clwy-cn"
   },
   "peerDependencies": {
+    "prop-types": "*",
     "react": "*",
     "react-native": "*",
     "react-native-video": "*"

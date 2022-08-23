@@ -7,7 +7,12 @@
 ## Install
 
 ```shell
-yarn add react-native-orientation-locker @sayem314/react-native-keep-awake react-native-vector-icons clwy-react-native-video-player
+yarn add clwy-react-native-video-player
+```
+
+If you use iOS
+
+```shell
 npx pod-install
 ```
 
@@ -52,7 +57,7 @@ controlDuration             | number   | No       | 3                 | Set the 
 ```jsx
 import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import Video from 'react-native-clwy-video-player'
+import Video from 'clwy-react-native-video-player'
 
 function VideoScreen({ route, navigation }) {  
   const [fullscreen, setFullscreen] = React.useState(false)
