@@ -1,9 +1,9 @@
 {
-  "name": "react-native-clwy-video-player",
-  "version": "1.1.0",
+  "name": "clwy-react-native-video-player",
+  "version": "1.1.4",
   "dependencies": {
-    "react-native-linear-gradient": "^2.5.6",
-    "@brlja/react-native-slider": "^0.12.1"
+    "react-native-linear-gradient": "^2.6.2",
+    "clwy-react-native-slider": "^0.12.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -32,12 +32,11 @@
   ],
   "license": "MIT",
   "author": {
-    "name": "Aaron Liu",
+    "name": "Liu Dong",
     "email": "canonpd@gmail.com",
     "url": "https://github.com/clwy-cn"
   },
   "peerDependencies": {
-    "prop-types": "*",
     "react": "*",
     "react-native": "*",
     "react-native-video": "*"

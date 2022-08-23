@@ -1,33 +1,13 @@
-# react-native-clwy-video-player
-
-A customisable, updated, React Native video player for Android and IOS, based on [abbasfreestyle react-native-af-video-player](https://github.com/abbasfreestyle/react-native-af-video-player) and 
-[rbcorrea/react-native-rb-video-player](https://github.com/rbcorrea/react-native-rb-video-player).
-
-This is a result of not merged pull requests and some modifications planned to be used with React Native 0.6+ version.
-
-![Demo](./demo.gif)
-
-## What did I do?
-- Android 
-
-It works good on Android. I resolved all warning and FullScreenControl disappear errors.
-
-- iOS
-
-In iOS，I recommend you to use [react-native-video](https://github.com/react-native-community/react-native-video) instead.
+# clwy-react-native-video-player
 
 ## Features
 
 * Fullscreen support for Android and iOS!
-* Works with react-navigation
-* Optional action button for custom use
-* Add your own logo and/or placeholder
-* Customise theme
 
 ## Install
 
 ```shell
-yarn add react-native-orientation-locker @sayem314/react-native-keep-awake react-native-vector-icons react-native-clwy-video-player
+yarn add react-native-orientation-locker @sayem314/react-native-keep-awake react-native-vector-icons clwy-react-native-video-player
 npx pod-install
 ```
 
@@ -66,11 +46,6 @@ onPlay                | function | No       | (playing) => {}           | Return
 error                 | boolean, object | No | true                     | Pass in an object to Alert. See https://facebook.github.io/react-native/docs/alert.html
 theme                 | object   | No       | all white                 | Pass in an object to theme. (See example below to see the full list of available settings)
 controlDuration             | number   | No       | 3                 | Set the visibility time of the pause button and the progress bar after the video was started
-
-
-# Issues
-
-Avoid adding alignItems: 'center' to the container, it can cause fullscreen mode to disappear :D
 
 ## Example
 
