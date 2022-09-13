@@ -7,7 +7,7 @@
 ## Install
 
 ```shell
-yarn add react-native-clwy-video-player react-native-orientation-locker @sayem314/react-native-keep-awake
+yarn add clwy-react-native-video-player react-native-orientation-locker @sayem314/react-native-keep-awake
 ```
 
 If you use iOS
