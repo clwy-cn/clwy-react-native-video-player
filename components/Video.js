@@ -65,7 +65,9 @@ class Video extends Component {
       progress: 0,
       currentTime: 0,
       seeking: false,
-      renderError: false
+      renderError: false,
+      subscribeChange:'',
+      subscribeBackPress:''
     }
     this.animInline = new Animated.Value(Win.width * 0.5625)
     this.animFullscreen = new Animated.Value(Win.width * 0.5625)
@@ -74,13 +76,13 @@ class Video extends Component {
   }
 
   componentDidMount() {
-    Dimensions.addEventListener('change', this.onRotated)
-    BackHandler.addEventListener('hardwareBackPress', this.BackHandler)
+    this.state.subscribeChange = Dimensions.addEventListener('change', this.onRotated)
+    this.state.subscribeBackPress = BackHandler.addEventListener('hardwareBackPress', this.BackHandler)
   }
 
   componentWillUnmount() {
-    Dimensions.removeEventListener('change', this.onRotated)
-    BackHandler.removeEventListener('hardwareBackPress', this.BackHandler)
+    this.state.subscribeChange.remove()
+    this.state.subscribeBackPress.remove()
   }
 
   onLoadStart() {
