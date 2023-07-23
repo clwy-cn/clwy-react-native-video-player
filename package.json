@@ -1,6 +1,6 @@
 {
   "name": "clwy-react-native-video-player",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "dependencies": {
     "react-native-linear-gradient": "^2.6.2"
   },
